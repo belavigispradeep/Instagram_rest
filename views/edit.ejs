@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h2>Edit your post</h2>
+    <p>Your id: <%= insta.id %></p>
+    <p>Your Username: @<%= insta.username %></p>
+    <form method="post" action="/instagram/<%= insta.id %>?_method=PATCH">
+        <textarea name="image" cols="50" rows="5"><%= insta.image %></textarea>
+        <textarea name="comment" cols="50" rows="5"><%= insta.comment %></textarea>
+        <br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
