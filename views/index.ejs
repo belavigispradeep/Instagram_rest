@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" href="https://img.freepik.com/vektoren-premium/instagram-app-symbol-social-media-logo-vektorillustration_277909-403.jpg?w=2000"> <!-- Corrected path separator -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Instagram</h1>
+        <div class="nav_icon">
+            <a href="#">Home</a>
+            <a href="#">Search</a>
+            <a href="#">Reels</a>
+            <a href="#">Profile</a>
+            <a href="http://localhost:8080/instagram/new">New post</a>
+        </div>
+        
+    </header>
+    <% for (let insta of instagram) { %>
+        <div class="post">
+            <h2>@<%= insta.username %></h2>
+            <img src="<%= insta.image%>"> <!-- Render image here -->
+            <p><%= insta.comment %>, 
+            <a href="http://localhost:8080/instagram/<%= insta.id %>">See more</a></p>&nbsp;&nbsp;
+            <button class="delete">Delete Post</button>
+        </div>
+    <% } %>
+</body>
+</html>

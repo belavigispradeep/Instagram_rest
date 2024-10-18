@@ -1,0 +1,16 @@
+header{
+    text-align: center;
+}
+.nav_icon a{
+    text-decoration: none;
+    padding: 15px;
+}
+
+.post{
+   text-align: center;
+}
+
+img{
+    width: 25%;
+    height: 300px;
+}
