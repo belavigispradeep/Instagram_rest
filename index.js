@@ -47,6 +47,27 @@ app.get("/instagram/:id",(req,res)=>{
     });
     res.render("show.ejs",{insta});
 });
+app.patch("/instagram/:id",(req,res)=>{
+    let {id}=req.params;
+    let newImage = req.body.image;
+    let newComment=req.body.comment;
+    let insta = instagram.find((insta)=>{ return id===insta.id});
+    insta.image=newImage;
+    insta.comment=newComment;
+    res.redirect("/instagram");
+});
+app.get("/instagram/:id/edit",(req,res)=>{
+    let {id}=req.params;
+    let insta = instagram.find((insta)=>{ return id===insta.id});
+    res.render("edit.ejs",{insta});
+});
+app.delete("/instagram/:id",(req,res)=>{
+    let {id}=req.params;
+    let insta=instagram.filter((insta)=>{
+        return id!==insta.id;
+    });
+    res.redirect("/instagram");
+})
 
 
 app.listen(port,()=>{
