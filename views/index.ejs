@@ -24,8 +24,11 @@
             <h2>@<%= insta.username %></h2>
             <img src="<%= insta.image%>"> <!-- Render image here -->
             <p><%= insta.comment %>, 
-            <a href="http://localhost:8080/instagram/<%= insta.id %>">See more</a></p>&nbsp;&nbsp;
-            <button class="delete">Delete Post</button>
+            <a href="http://localhost:8080/instagram/<%= insta.id %>">See more</a></p>
+            <a href="http://localhost:8080/instagram/<%= insta.id %>/edit">Edit Post</a>    
+            <form method="post" action="/instagram/<%=insta.id%>?_method=DELETE">
+                <button>Delete Post</button>
+           </form>
         </div>
     <% } %>
 </body>
